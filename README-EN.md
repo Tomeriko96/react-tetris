@@ -1,3 +1,6 @@
+### PWA fork
+This is a fork of [chvin/react-tetris](https://github.com/chvin/react-tetris) (Apache-2.0) that works offline and installs as a PWA. Play it at <https://tomeriko96.github.io/react-tetris/>. To install it, open the page once, then choose "Add to Home screen" (Android/iOS) or the install icon in the address bar (desktop). After that first visit it also plays without a network.
+
 ### 中文介绍
 请查看 [README.md](https://github.com/chvin/react-tetris/blob/master/README.md)
 

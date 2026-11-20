@@ -1,3 +1,6 @@
+### PWA 分支 / PWA fork
+本仓库是 [chvin/react-tetris](https://github.com/chvin/react-tetris)（Apache-2.0）的分支，可离线游玩并可作为 PWA 安装：<https://tomeriko96.github.io/react-tetris/>。打开一次页面后，选择“添加到主屏幕”（手机）或地址栏中的安装图标（桌面）。首次访问后无需网络也能玩。
+
 ### English introduction
 Please view [README-EN.md](https://github.com/chvin/react-tetris/blob/master/README-EN.md)
 
