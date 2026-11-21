@@ -66,6 +66,9 @@ const down = (store) => {
           music.move();
         }
         let startLines = state.get('startLines');
+        if (state.get('mode') !== 'puzzle') {
+          return;
+        }
         startLines = startLines - 1 < 0 ? 10 : startLines - 1;
         store.dispatch(actions.startLines(startLines));
       },

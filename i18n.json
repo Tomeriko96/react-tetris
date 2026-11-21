@@ -1,6 +1,6 @@
 {
   "lan": ["cn", "en", "fr", "fa"],
-  "default": "cn",
+  "default": "en",
   "data": {
     "title": {
       "cn": "俄罗斯方块",
@@ -61,6 +61,18 @@
       "en": "Level",
       "fr": "Difficulté",
       "fa": "سطح"
+    },
+    "modeGame": {
+      "cn": "游戏",
+      "en": "Game",
+      "fr": "Jeu",
+      "fa": "بازی"
+    },
+    "modePuzzle": {
+      "cn": "谜题",
+      "en": "Puzzle",
+      "fr": "Puzzle",
+      "fa": "پازل"
     },
     "startLine": {
       "cn": "起始行",

@@ -3,6 +3,7 @@ export const MUSIC = 'MUSIC';
 export const MATRIX = 'MATRIX';
 export const NEXT_BLOCK = 'NEXT_BLOCK';
 export const MOVE_BLOCK = 'MOVE_BLOCK';
+export const MODE = 'MODE';
 export const START_LINES = 'START_LINES';
 export const MAX = 'MAX';
 export const POINTS = 'POINTS';

@@ -10,6 +10,7 @@ const keyboard = {
   83: 's',
   82: 'r',
   80: 'p',
+  77: 'm',
 };
 
 let keydownActive;

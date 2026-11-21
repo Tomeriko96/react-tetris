@@ -49,6 +49,9 @@ const down = (store) => {
           return;
         }
         let startLines = state.get('startLines');
+        if (state.get('mode') !== 'puzzle') {
+          return;
+        }
         startLines = startLines + 1 > 10 ? 0 : startLines + 1;
         store.dispatch(actions.startLines(startLines));
       },

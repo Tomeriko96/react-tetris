@@ -1,4 +1,4 @@
-import { blockType, StorageKey } from './const';
+import { blockType, StorageKey, ModeKey } from './const';
 
 const hiddenProperty = (() => { // document[hiddenProperty] 可以判断页面是否失焦
   let names = [
@@ -85,6 +85,7 @@ const unit = {
         data = btoa(data);
       }
       localStorage.setItem(StorageKey, data);
+      try { localStorage.setItem(ModeKey, store.getState().get('mode')); } catch (e) { /* ignore */ }
     });
   },
   isMobile() { // 判断是否为移动端

@@ -74,6 +74,9 @@ const lastRecord = (() => { // 上一把的状态
     }
     data = decodeURIComponent(data);
     data = JSON.parse(data);
+    if (data.mode === undefined) { // saved by a version without modes: keep scores, drop the old game/puzzle board
+      data = { max: data.max, music: data.music };
+    }
   } catch (e) {
     if (window.console || window.console.error) {
       window.console.error('读取记录错误:', e);
@@ -81,6 +84,16 @@ const lastRecord = (() => { // 上一把的状态
     return false;
   }
   return data;
+})();
+
+const ModeKey = 'REACT_TETRIS_MODE';
+
+const initMode = (() => { // 'game' (default, empty board) or 'puzzle' (pre-filled start lines)
+  try {
+    return localStorage.getItem(ModeKey) === 'puzzle' ? 'puzzle' : 'game';
+  } catch (e) {
+    return 'game';
+  }
 })();
 
 const maxPoint = 999999;
@@ -119,6 +132,8 @@ module.exports = {
   clearPoints,
   StorageKey,
   lastRecord,
+  ModeKey,
+  initMode,
   maxPoint,
   eachLines,
   transform,

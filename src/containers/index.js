@@ -19,6 +19,8 @@ import Guide from '../components/guide';
 import { transform, lastRecord, speeds, i18n, lan } from '../unit/const';
 import { visibilityChangeEvent, isFocus } from '../unit/';
 import states from '../control/states';
+import store from '../store';
+import todo from '../control/todo';
 
 class App extends React.Component {
   constructor() {
@@ -60,6 +62,7 @@ class App extends React.Component {
     });
   }
   render() {
+    const puzzle = this.props.mode === 'puzzle';
     let filling = 0;
     const size = (() => {
       const w = this.state.w;
@@ -99,8 +102,17 @@ class App extends React.Component {
               <Logo cur={!!this.props.cur} reset={this.props.reset} />
               <div className={style.state}>
                 <Point cur={!!this.props.cur} point={this.props.points} max={this.props.max} />
-                <p>{ this.props.cur ? i18n.cleans[lan] : i18n.startLine[lan] }</p>
-                <Number number={this.props.cur ? this.props.clearLines : this.props.startLines} />
+                <p // eslint-disable-line
+                  onClick={() => todo.m.toggle(store)}
+                  style={this.props.cur ? null : { cursor: 'pointer' }}
+                >
+                  { this.props.cur ? i18n.cleans[lan] :
+                    `${puzzle ? i18n.modePuzzle[lan] : i18n.modeGame[lan]} (M)` }
+                </p>
+                <Number
+                  number={this.props.cur ? this.props.clearLines :
+                    (puzzle ? this.props.startLines : 0)}
+                />
                 <p>{i18n.level[lan]}</p>
                 <Number
                   number={this.props.cur ? this.props.speedRun : this.props.speedStart}
@@ -134,6 +146,7 @@ App.propTypes = {
   speedStart: propTypes.number.isRequired,
   speedRun: propTypes.number.isRequired,
   startLines: propTypes.number.isRequired,
+  mode: propTypes.string.isRequired,
   clearLines: propTypes.number.isRequired,
   points: propTypes.number.isRequired,
   max: propTypes.number.isRequired,
@@ -151,6 +164,7 @@ const mapStateToProps = (state) => ({
   speedStart: state.get('speedStart'),
   speedRun: state.get('speedRun'),
   startLines: state.get('startLines'),
+  mode: state.get('mode'),
   clearLines: state.get('clearLines'),
   points: state.get('points'),
   max: state.get('max'),

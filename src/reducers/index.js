@@ -5,6 +5,7 @@ import matrix from './matrix';
 import next from './next';
 import cur from './cur';
 import startLines from './startLines';
+import mode from './mode';
 import max from './max';
 import points from './points';
 import speedStart from './speedStart';
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   next,
   cur,
   startLines,
+  mode,
   max,
   points,
   speedStart,

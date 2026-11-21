@@ -38,6 +38,13 @@ function startLines(n) {
   };
 }
 
+function mode(data) {
+  return {
+    type: reducerType.MODE,
+    data,
+  };
+}
+
 function matrix(data) {
   return {
     type: reducerType.MATRIX,
@@ -114,6 +121,7 @@ export default {
   speedStart,
   speedRun,
   startLines,
+  mode,
   matrix,
   lock,
   clearLines,

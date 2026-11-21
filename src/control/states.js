@@ -49,7 +49,7 @@ const states = {
     const state = store.getState();
     states.dispatchPoints(0);
     store.dispatch(actions.speedRun(state.get('speedStart')));
-    const startLines = state.get('startLines');
+    const startLines = state.get('mode') === 'puzzle' ? state.get('startLines') : 0;
     const startMatrix = getStartMatrix(startLines);
     store.dispatch(actions.matrix(startMatrix));
     store.dispatch(actions.moveBlock({ type: state.get('next') }));
