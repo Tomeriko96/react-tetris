@@ -85,7 +85,9 @@ const unit = {
         data = btoa(data);
       }
       localStorage.setItem(StorageKey, data);
-      try { localStorage.setItem(ModeKey, store.getState().get('mode')); } catch (e) { /* ignore */ }
+      try {
+        localStorage.setItem(ModeKey, store.getState().get('mode'));
+      } catch (e) { /* ignore */ }
     });
   },
   isMobile() { // 判断是否为移动端

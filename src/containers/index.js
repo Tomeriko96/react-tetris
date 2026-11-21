@@ -63,6 +63,7 @@ class App extends React.Component {
   }
   render() {
     const puzzle = this.props.mode === 'puzzle';
+    const idleNumber = puzzle ? this.props.startLines : 0;
     let filling = 0;
     const size = (() => {
       const w = this.state.w;
@@ -109,10 +110,7 @@ class App extends React.Component {
                   { this.props.cur ? i18n.cleans[lan] :
                     `${puzzle ? i18n.modePuzzle[lan] : i18n.modeGame[lan]} (M)` }
                 </p>
-                <Number
-                  number={this.props.cur ? this.props.clearLines :
-                    (puzzle ? this.props.startLines : 0)}
-                />
+                <Number number={this.props.cur ? this.props.clearLines : idleNumber} />
                 <p>{i18n.level[lan]}</p>
                 <Number
                   number={this.props.cur ? this.props.speedRun : this.props.speedStart}

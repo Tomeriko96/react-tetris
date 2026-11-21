@@ -40,7 +40,7 @@ export default class Keyboard extends React.Component {
       }
     }, true);
 
-    Object.keys(todo).forEach((key) => {
+    Object.keys(todo).filter(key => this[`dom_${key}`]).forEach((key) => { // m has no button
       this[`dom_${key}`].dom.addEventListener('mousedown', () => {
         if (touchEventCatch[key] === true) {
           return;

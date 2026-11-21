@@ -1,5 +1,5 @@
 // Offline cache for react-tetris. Bump VERSION when any file in ASSETS changes.
-var VERSION = 'tetris-v2';
+var VERSION = 'tetris-v3';
 var ASSETS = [
   './',
   'index.html',

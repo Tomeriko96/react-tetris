@@ -74,7 +74,7 @@ const lastRecord = (() => { // 上一把的状态
     }
     data = decodeURIComponent(data);
     data = JSON.parse(data);
-    if (data.mode === undefined) { // saved by a version without modes: keep scores, drop the old game/puzzle board
+    if (data.mode === undefined) { // saved before modes existed: keep scores, drop old board
       data = { max: data.max, music: data.music };
     }
   } catch (e) {
